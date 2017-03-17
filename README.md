@@ -67,9 +67,31 @@
     ```
     logstash-plugin install --no-verify
     ```
+9. 编写配置文件 _alioss.logstash.conf_
+    
+    ```
+    input {
+        alioss {
+            endpoint => 'your endpoint'
+            access_key_id => 'your access_key_id'
+            access_key_secret => 'your access_key_secret'
+            bucket => 'your bucket'
+            interval => 60
+            codec => json
+        }
+    }
+    
+    output {
+        stdout {
+            codec=>rubydebug
+        }
+    }
+    ```
 
 9. 测试插件
     
     ```
-    logstash -e 'input { alioss { } } output { stdout {codec=>rubydebug} }'
+    logstash -f alioss.logstash.conf
     ```
+
+
