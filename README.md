@@ -2,16 +2,16 @@
 
 ## 安装使用 **jruby**
     
-    ```
-    rvm install jruby-9.1.7.0
-    rvm use jruby-9.1.7.0 --default
-    ```
+```
+rvm install jruby-9.1.7.0
+rvm use jruby-9.1.7.0 --default
+```
     
 ## 安装 **bundler** 
 
-    ```
-    gem install bundler
-    ```
+```
+gem install bundler
+```
 
 ## 创建项目
 
@@ -109,30 +109,30 @@ logstash-plugin list --group input
 ## 编写配置文件 
 _alioss.logstash.conf_
     
-    ```
-    input {
-        alioss {
-            endpoint => 'your endpoint'
-            access_key_id => 'your access_key_id'
-            access_key_secret => 'your access_key_secret'
-            bucket => 'your bucket'
-            interval => 60
-            codec => json
-        }
+```
+input {
+    alioss {
+        endpoint => 'your endpoint'
+        access_key_id => 'your access_key_id'
+        access_key_secret => 'your access_key_secret'
+        bucket => 'your bucket'
+        interval => 60
+        codec => json
     }
-    
-    output {
-        stdout {
-            codec=>rubydebug
-        }
+}
+
+output {
+    stdout {
+        codec=>rubydebug
     }
-    ```
+}
+```
 
 ## 测试插件
     
-    ```
-    logstash -f alioss.logstash.conf
-    ```
+```
+logstash -f alioss.logstash.conf
+```
 
 
 
