@@ -21,7 +21,7 @@ gem install bundler
 logstash-plugin generate --type input --name alioss --path ./
 ```
     
-当前下创建了一个名为 logstash-input-alioss 的工程，目录结构如下:
+当前目录下创建了一个名为 logstash-input-alioss 的工程，目录结构如下:
     
 ```
 |____CHANGELOG.md
